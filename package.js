@@ -5,11 +5,13 @@ Package.describe({
   git: 'https://github.com/emirue/meteor-line'
 });
 
-Package.onUse(function(api) {
-  api.versionsFrom('1.0');
+var configure = function(api) {
+  api.versionsFrom('1.3');
   api.use(['jquery'], 'client');
 
-  api.addFiles([
-    'lib/jquery-line.js'
-  ], 'client');
+  api.addFiles('lib/jquery-line.js', 'client');
+};
+
+Package.onUse(function(api) {
+  configure(api);
 });
